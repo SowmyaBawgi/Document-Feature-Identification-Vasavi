@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"
+          rel="stylesheet">
+  </head>
+  <body>
+    <div class="container">
+      <div class="header">
+        <h3 class="text-muted">Uploaded files</h3>
+      </div>
+      <hr/>
+      
+        <h1>LIST OF UPLOADED FILES</h1>
+         <div>
+      This is a list of the files you just uploaded, click on them to load/download them
+      <ul>
+        {% for file in filenames %}
+          <table border="1">
+              <tr>
+                  <td>
+        <a href="{{url_for('uploaded_file', filename=file)}}">{{file}}</a>
+                  </td>
+                  <td><b>Helllo</b></td>
+          </tr>
+          </table>
+        {% endfor %}
+      </ul>
+      </div>
+
+    </div>
+  </body>
+</html>
