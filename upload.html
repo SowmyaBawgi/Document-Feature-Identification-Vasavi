@@ -11,23 +11,35 @@
       </div>
       <hr/>
       
-        <h1>LIST OF UPLOADED FILES</h1>
+        <h1>LIST OF TABLES</h1>
          <div>
-      This is a list of the files you just uploaded, click on them to load/download them
-      <ul>
+      List of Files in tabular format
         {% for file in filenames %}
           <table border="1">
               <tr>
                   <td>
-        <a href="{{url_for('uploaded_file', filename=file)}}">{{file}}</a>
+                    <a href="{{url_for('uploaded_file', filename=file)}}">{{file}}</a>
                   </td>
-                  <td><b>Helllo</b></td>
-          </tr>
+                  <td>
+                    <form action="{{url_for('remove', filename=file)}}" ,method="post">
+
+                        <input type="submit" value="Remove" class="span2"/>
+
+                    </form>
+
+                  </td>
+                </tr>
           </table>
         {% endfor %}
-      </ul>
+
       </div>
 
     </div>
+
+  <div>
+      <form action="{{url_for()}}" method="post">
+      <input type="submit" value="Classify">
+          </form>
+      </div>
   </body>
 </html>
