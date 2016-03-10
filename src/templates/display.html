@@ -1,0 +1,25 @@
+{% extends "index.html" %}
+{% block content %}
+    <br>
+    <p><b>Classified files</b></p>
+    <table border="1" style="border-collapse:collapse" width="800"><tbody>
+    <tr><th width="400">File Name</th>
+        <th width="400">Category</th>
+        <th width="400">Source Path</th>
+        <th width="400">Destination Path</th>
+    </tr>
+    {% for i in range(0,len) %}
+        <tr>
+            <td width="400">{{ filename[i] }}</td>
+            <td width="400">{{ categories[i] }}</td>
+            <td width="400">{{ srcpath[i] }}</td>
+            <td width="400">{{ destpath[i] }}</td>
+            </tr>
+    {% endfor %}
+
+
+
+    </tbody></table>
+    <br>
+    <form action="/getzip/" method="POST" ><input type="submit" name="getzip" value="Download-Get ZIP file"></form></br>
+{% endblock %}
